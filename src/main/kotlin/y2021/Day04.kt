@@ -31,7 +31,7 @@ fun main() {
 			}
 		} else null
 	}
-	
+
 	val day = Day04()
 	println(day.solve(p1))
 	println(day.solve(p2))
