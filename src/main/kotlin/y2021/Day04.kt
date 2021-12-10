@@ -54,7 +54,7 @@ class Day04 {
 		return 0
 	}
 
-	fun isBingo(i: Int): Int {
+	private fun isBingo(i: Int): Int {
 		for (ln in 0..4) {
 			val x = isBingoLine(i, ln, 5)
 			val y = isBingoLine(i, ln * 5, 1)
@@ -64,7 +64,7 @@ class Day04 {
 		return 0
 	}
 
-	fun isBingoLine(i: Int, start: Int, jump: Int): Int {
+	private fun isBingoLine(i: Int, start: Int, jump: Int): Int {
 		var pos = i + start
 		var count = 0
 		for (n in 0..4) {
