@@ -24,7 +24,6 @@ class Day11 {
             for (y in squidMap.indices) {
                 for (x in squidMap[y].indices) {
                     squidMap[y][x]++
-
                 }
             }
             for (y in squidMap.indices) {
@@ -42,6 +41,7 @@ class Day11 {
         }
     }
 
+    //simple life of game, nothing difficult to be explained
 
     private fun flash(y: Int, x: Int) {
         flashedAlready.add(Pair(y, x))

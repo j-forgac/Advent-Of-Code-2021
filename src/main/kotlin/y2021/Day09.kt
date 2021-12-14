@@ -67,8 +67,7 @@ class Day09 {
             Pair(y + 1, x),
             Pair(y - 1, x)
         )
-        adjacentTiles
-            .filter { !visitedTiles.contains(it) && input[it.first][it.second] != 9 }
+        adjacentTiles.filter { !visitedTiles.contains(it) && input[it.first][it.second] != 9 }
             .forEach {
                 getNextTile(it.first, it.second, visitedTiles)
             }

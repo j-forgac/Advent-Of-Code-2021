@@ -3,7 +3,7 @@ package y2021
 import java.io.File
 
 private var input =
-    File("./src/main/kotlin/inputs/input06.txt").readText().toString().split(",").map { it.toInt() }.toMutableList()
+    File("./src/main/kotlin/inputs/input06.txt").readText().split(",").map { it.toInt() }.toMutableList()
 private var colony: MutableMap<Int, Long> = input.groupingBy { it }.eachCount().mapValues { it.value.toLong() }.toMutableMap()
 private var newColony: MutableMap<Int, Long> = mutableMapOf()
 
@@ -26,6 +26,8 @@ class Day06 {
         }
         return input.size
     }
+
+    //colony is map where key corresponds to fish birth timer and value determines number of fish
 
     fun part2(cycles: Int): Long {
         for (i in 0 until cycles) {

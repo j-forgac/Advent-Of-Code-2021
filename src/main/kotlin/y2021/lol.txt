@@ -1,0 +1,68 @@
+string: NH
+
+CH -> CHB
+CH HB
+
+CBH HCB
+CB BH HC CB
+
+NC CH
+
+NBC CBH
+
+NB BC CB BH
+
+B C B H
+
+NBCBH
+
+NB BB BB BC CH HB BH HH | NB 2:BB BC CH HB BH BH -> NB 2:B C H B H H -> N 4:B C 3:H
+
+NB BB BB BC CH HB BH HB | NB 2:BB BC CH 2:HB BH -> NB 2:B C H 2:B H -> N 5:B C 2:H
+
+NBBBCHBHH
+
+N 4:B C 3:H
+
+NBBNBNBBCBHCBHHNH
+
+    fun compute(inputStr: String, time: Int){
+        println("string: $inputStr")
+        var poly = inputStr
+        polymerEvolution[inputStr] = mutableListOf()
+        for(i in 0..time){
+            val chainWindowed = poly.parseChain()
+            poly = ""
+            chainWindowed.forEach {
+                rules.forEach { (k, v) ->
+                    if (k in it) {
+                        poly += it.addCharAtIndex(v, 1).take(2)
+                    }
+                }
+            }
+            poly += chainWindowed.last()[0]
+            polymerEvolution[inputStr]!!.add(poly)
+            println(poly)
+            if(polymerEvolution[inputStr]!!.any { it.contains(inputStr) }) return
+        }
+    }
+NNCB
+
+NN NC CB
+
+NCN NBC CHB
+
+NC CN NB BC CH HB
+
+NCNBCHB
+
+NBC CCN NBB BBC CBH HCB
+
+NB BC CC CN NB BB BB BC CB BH HC CB
+
+NB C C N B B B C B H C B
+
+cycle: 0
+NBCCNBBBCBHCB
+cycle: 1
+NBBBCNCCNBBNBNBBCHBHHBCHB

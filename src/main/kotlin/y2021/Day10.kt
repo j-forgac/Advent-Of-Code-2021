@@ -36,7 +36,9 @@ class Day10 {
         return failValues.values.sortedDescending()[(failValues.size-1)/2]
     }
 
-    //finding errors is almost identical in both parts, since the same logic still applies
+    //finding errors is almost identical in both parts
+    //keeps removing whole brackets "()", "[]", "{}", "<>" until it finds pair of different ones "(>", [>" etc...
+    //than is counted score from remaining brackets
 
     private fun findErr1(input: String): Int {
         var text = input

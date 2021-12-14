@@ -29,6 +29,8 @@ class Day08 {
         return inputP2.fold(0){acc, list -> acc + decode(list[0], list[1])}
     }
 
+    //TODO:přepsat pogrom kód
+
     private fun decode(numList: List<String>, output: List<String>): Int {
         val solved: HashMap<Int, String> = HashMap()
         solved[1] = numList.single { it.length == 2 }
