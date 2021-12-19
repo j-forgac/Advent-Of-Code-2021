@@ -12,9 +12,10 @@ fun main() {
 	val day = Day18()
 	val timeInMillis = measureTimeMillis {
 		day.part1()
-	}
 
 	day.part2()
+	}
+
 	println("the time was: $timeInMillis ms")
 }
 
@@ -78,7 +79,7 @@ class Day18 {
 					?: listOf(oldStr[1], "", "")
 				if (!"$prefixL$numberL$suffixL".last().isDigit()) replacePair = replacePair.substring(1)
 
-				//increase value of the closest numbers (if there is none, the replacement of pair 0 is the first number -> no comma needed)
+				//increase value of the closest numbers (if there is none, the replacement of pair (0) is the first number -> no comma needed)
 				if (numberL.isNotEmpty()) numberL = (numberL.toInt() + pair[0]).toString()
 
 				if (numberR.isNotEmpty()) numberR = (numberR.toInt() + pair[1]).toString()
